@@ -18,8 +18,6 @@ class Signin{
                 InputValidation::handle_error("Incorrect Password.", '/chat/index.php/signin');
             }
         }
-
-        InputValidation::handle_success("Logged in.", '/chat/index.php/chats');
         
     }
 }
@@ -28,3 +26,6 @@ require_once 'database/dbhelper.php';
 $email = $_POST['email'];
 $password = $_POST['password'];
 Signin::sign_in_input_validation($pdo, $email, $password);
+$_SESSION['user'] = Signin::$user;
+InputValidation::handle_success("Logged in.", '/chat/index.php/chats');
+
