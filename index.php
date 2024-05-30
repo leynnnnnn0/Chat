@@ -1,4 +1,3 @@
 <?php
-
-// require_once 'views/chat_view.php';
-require_once 'views/signup_view.php';
+require_once 'util/functions.php';
+require_once 'routers/route.php';
