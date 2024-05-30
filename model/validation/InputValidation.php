@@ -28,14 +28,9 @@ class InputValidation
         return !strlen($password) >= 8;
     }
 
-    public static function validate_login_password(Database $pdo, string $email, string $password)
+    public static function validate_login_password(string $password, string $hashedPass)
     {
-        try {
-            $result = InputValidation::validate_email_existence($pdo, $email);
-            return !password_verify($password, $result['pass']);
-        } catch (PDOException $e) {
-            $_SESSION['database_error'] = ['password_validation_error' => $e->getMessage()];
-        }    
+        return password_verify($password, $hashedPass);
     }
 
     public static function handle_error(string $message, string $location)
