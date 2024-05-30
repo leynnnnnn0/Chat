@@ -37,12 +37,10 @@
           <div class="text-sm font-semibold mt-2">Aminos Co.</div>
           <div class="text-xs text-gray-500">Lead UI/UX Designer</div>
           <div class="flex flex-row items-center mt-3">
-            <div
-              class="flex flex-col justify-center h-4 w-8 bg-indigo-500 rounded-full"
-            >
-              <div class="h-3 w-3 bg-white rounded-full self-end mr-1"></div>
-            </div>
-            <div class="leading-none ml-1 text-xs">Active</div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#87B84D" class="bi bi-circle-fill" viewBox="0 0 16 16">
+  <circle cx="8" cy="8" r="8"/>
+</svg>
+            <div class="leading-none ml-1 text-xs font-bold">Active</div>
           </div>
         </div>
         <div class="flex flex-col mt-8">
