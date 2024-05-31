@@ -1,18 +1,23 @@
-setInterval(() => {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', '/chat/index.php/chats/users' , true);
-    xhr.onload = () => {
-        if(xhr.status === 200)
-            {
-                console.log(xhr.response);
-            }
-            else {
-                console.log(xhr.status);
-            }
-    }
-    xhr.onerror = () => {
-        console.log("Request failed");
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.users_container');
+
+    if (!container) {
+        return;
     }
 
-    xhr.send();
-}, 5000);
+    setInterval(() => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', '/chat/index.php/chats/users', true);
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                container.innerHTML = xhr.responseText;
+            } else {
+                console.error(`Failed to fetch users: ${xhr.status} ${xhr.statusText}`);
+            }
+        };
+        xhr.onerror = () => {
+            console.log("Request failed");
+        };
+        xhr.send();
+    }, 500);
+});
