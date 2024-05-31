@@ -12,6 +12,6 @@ $results = Chat::getAllUsers($pdo);
             H
         </div>
         <div class="ml-2 text-sm font-semibold"><?= $value['first_name'] . ' ' . $value['last_name'] ?></div>
-    </button>
+    </>
 
 <?php endforeach; ?>
