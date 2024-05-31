@@ -94,7 +94,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4">
+        <form id="message-form" class="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4">
           <div>
             <button class="flex items-center justify-center text-gray-400 hover:text-gray-600">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -108,6 +108,9 @@
           <div class="flex-grow ml-4">
             <div class="relative w-full">
               <input type="text"
+              name="message"
+              id="message_input"
+              autocomplete="off"
                 class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10" />
               <button
                 class="absolute flex items-center justify-center h-full w-12 right-0 top-0 text-gray-400 hover:text-gray-600">
@@ -121,8 +124,7 @@
           </div>
           <div class="ml-4">
             <button
-            type="submit"
-              class="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0">
+              class="send-message-btn flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0">
               <span>Send</span>
               <span class="ml-2">
                 <svg class="w-4 h-4 transform rotate-45 -mt-px" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -133,7 +135,7 @@
               </span>
             </button>
           </div>
-        </div>
+        </form>
 
       </div>
     </div>
