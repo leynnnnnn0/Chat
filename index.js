@@ -1,22 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById("message-form");
-    const button = document.querySelector(".send-message-btn");
+    const sendMessageButton = document.querySelector(".send-message-btn");
     const container = document.querySelector('.users_container');
     const inputBox = document.querySelector('#message_input');
 
-    if(form && button) {
+    if(form && sendMessageButton) {
         form.onsubmit = (e) => {
             e.preventDefault();
         }
     
-        button.addEventListener('click', () => {
+        sendMessageButton.addEventListener('click', () => {
             const xhr = new XMLHttpRequest();
             xhr.open('POST', '/chat/index.php/chats/send', true);
             xhr.onload = () => {
                 if (xhr.status === 200) {
-                    console.log(xhr.response);
-                    console.log("CEND BUTTON");
                     inputBox.value = '';
+                    console.log(xhr.response);
                 }
             }
             const formData = new FormData(form);
@@ -26,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(container) {
         setInterval(() => {
+
             const xhr = new XMLHttpRequest();
             xhr.open('GET', '/chat/index.php/chats/users', true);
             xhr.onload = () => {

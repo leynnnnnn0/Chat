@@ -13,5 +13,6 @@ $router->post('/chat/index.php/signin', "controllers/access/Signin.php");
 $router->post('/chat/index.php/chat/logout', 'controllers/access/logout.php');
 $router->get('/chat/index.php/chats/users', 'controllers/chat/users_get.php');
 $router->post('/chat/index.php/chats/send', 'controllers/chat/send_message.php');
+$router->post('/chat/index.php/chats/select_conversation', 'controllers/chat/show_conversation.php');
 
 

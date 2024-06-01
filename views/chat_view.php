@@ -46,9 +46,9 @@
           <span class="users_count flex items-center justify-center bg-gray-300 h-4 w-4 rounded-full">4</span>
         </div>
         <!-- Active Conversations container -->
-        <div class="users_container flex flex-col space-y-1 mt-4 -mx-2 h-48 overflow-y-auto">
-
-        </div>
+        <form id="select-conversation-form" class="users_container flex flex-col space-y-1 mt-4 -mx-2 h-48 overflow-y-auto">
+        <input type="hidden" id="receiver_id" value=""> 
+        </form>
         <div class="flex flex-row items-center justify-between text-xs mt-6">
           <span class="font-bold">Archivied</span>
           <span class="flex items-center justify-center bg-gray-300 h-4 w-4 rounded-full">7</span>
@@ -63,11 +63,13 @@
         </div>
       </div>
     </div>
+    <!-- chats container -->
     <div class="flex flex-col flex-auto h-full p-6">
-      <h1 class="font-bold text-black font-7 justify-self-center self-center">Select a chat to start</h1>
-      
+      <!-- <h1 class="font-bold text-black font-7 justify-self-center self-center">Select a chat to start</h1> -->
+      <?php require_once 'controllers/chat/show_conversation.php' ?>
     </div>
   </div>
+  <script src="../select_conversation.js"></script>
   <?php require_once 'partials/footer.php'; ?>
 
   <!-- <?php require_once 'components/chat_container.php' ?> -->
